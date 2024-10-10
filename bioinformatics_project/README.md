@@ -1,4 +1,4 @@
-# data
+# Data
 Contains generated random sequence
 # Results
 Contains results for cutsite script
