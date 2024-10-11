@@ -1,11 +1,7 @@
-import argparse
-
-parser = argparse.ArgumentParser(description = 'Generate a random sequence of nucleotides of length 1,000,000 and output to a specified file.')
-parser.add_argument('-l','--length', help = "length of sequence")
-parser.add_argument('-o', '--output', help = 'output file')
-args = parser.parse_args()
+# Usage: running script will generate a random 1,000,000 unit long sequence of nucleotides in the bioinformatics_project/data/random_sequence.fasta file
 
 import random
+import os
 
 def randfasta(seqlen):
     # generate sequence of nucleotides up to specified length
@@ -24,5 +20,6 @@ def randfasta(seqlen):
     return output
 
 if __name__ == "__main__":
-    with open(args.output,'wt') as fout:
+    path = os.path.join(os.pardir, 'data/random_sequence.fasta')
+    with open(path,'wt') as fout:
         print(randfasta(1000000), file = fout)
