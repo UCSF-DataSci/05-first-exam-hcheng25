@@ -13,9 +13,10 @@ def randfasta(seqlen):
     temp = []
     for i in range((len(sequence)//80)+1):
         temp.insert(i-1,''.join(sequence[80*(i-1):80*i]))
+    # adding final chunk if length of sequeence is not divisible by 80
     temp.insert((len(sequence)//80),''.join(sequence[80*(len(sequence)//80):len(sequence)]))
     temp.remove('')
-    # combine chunks into one string separated by line break
+    # combine chunks into one string separated by line breaks
     output = '\n'.join(temp)
     return output
 
