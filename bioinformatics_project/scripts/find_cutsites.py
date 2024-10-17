@@ -50,7 +50,7 @@ if __name__ == "__main__":
     locs = cutloc(fasta, cutsite)
     thefive = firstfive(locs, 80000, 120000)
     with open(resultpath,'wt') as fout:
-        print('Analyzing cut site: ', cutsite, '\n', file=fout)
-        print('Total cut sites found: ', cutcount(fasta, cutsite), '\n', file=fout)
-        print('Cut site pairs 80-120 kbp apart: ', cutpairs(locs, 80000, 120000), '\n', file=fout)
+        print('Analyzing cut site: ', cutsite, file=fout)
+        print('Total cut sites found: ', cutcount(fasta, cutsite), file=fout)
+        print('Cut site pairs 80-120 kbp apart: ', cutpairs(locs, 80000, 120000), file=fout)
         print('First five pairs:\n1. ', thefive[0], '\n2. ', thefive[1], '\n3. ', thefive[2], '\n4. ', thefive[3], '\n5. ', thefive[4], file=fout)
